@@ -5,6 +5,12 @@ Class removes all previus replay messages, leave only new content.
 ```php
 composer require "bordeux/email-cleaner"
 ```
+or
+```php
+{
+	"bordeux/email-cleaner": "dev-master"
+}
+```
 
 ## Example usage
 ```php
