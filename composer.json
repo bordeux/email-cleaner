@@ -1,0 +1,24 @@
+{
+    "name": "bordeux/email-cleaner",
+    "description": "Replay email cleaner",
+    "require": {
+        "electrolinux/phpquery": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Krzysztof Bordeux Bednarczyk",
+            "email": "admin@bordeux.net"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/bordeux/email-cleaner.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EmailCleaner\\": "src/"
+        }
+    }
+}
