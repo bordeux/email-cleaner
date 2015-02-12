@@ -4,6 +4,9 @@
 	"version": "0.5",
 	"type": "library",
 	"require" : {
+		"php": ">=5.4",
+	},
+	"require-dev" : {
 		"electrolinux/phpquery" : "dev-master"
 	},
 	"authors" : [{
