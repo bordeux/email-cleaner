@@ -146,8 +146,10 @@ class EmailCleaner {
             $filter->setDom($this->dom);
             $filter->run();
         }
-        
-        return $this->dom->htmlOuter();
+        $this->dom->document->doctype->textContent = "";
+        $result = preg_replace("/<!DOCTYPE [^>]+>/", "", $this->dom->html());
+        $result = trim($result);
+        return $result;
     }
 
 }
