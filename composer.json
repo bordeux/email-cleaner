@@ -1,7 +1,7 @@
 {
 	"name" : "bordeux/email-cleaner",
 	"description" : "Replay email cleaner/remover for PHP",
-	"homepage": "https://github.com/bordeux/email-cleaner"
+	"homepage": "https://github.com/bordeux/email-cleaner",
 	"version": "0.6.0",
 	"type": "library",
 	"require" : {
