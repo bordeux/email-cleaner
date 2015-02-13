@@ -8,6 +8,11 @@ use EmailCleaner\FilterAbstract;
 class SentFromIphoneFilter extends FilterAbstract {
 
 
+    public function getParent(){
+        
+    }
+    
+    
     public function run() {
         $comments = $this->dom->xpath->query('//text()');
        
@@ -18,6 +23,7 @@ class SentFromIphoneFilter extends FilterAbstract {
                 continue;
             }
             $prev = $el->previousSibling;
+            
             if($prev && $prev->nodeName != "br"){
                 continue;
             }
@@ -27,13 +33,19 @@ class SentFromIphoneFilter extends FilterAbstract {
             }
             
             $prev->parentNode->removeChild($prev);
-            $prevSecond->parentNode->removeChild($prevSecond);
             
-            $nextElement = $el->parentNode;
+            $nextElement = $prevSecond->parentNode;
+            $prevSecond->parentNode->removeChild($prevSecond);
             $nextElement->removeChild($el);
+            $nextElementsList = [];
             while($nextElement = $nextElement->nextSibling){
-                $nextElement->parentNode->removeChild($nextElement);
+                $nextElementsList[] = $nextElement;
             }
+            
+            foreach($nextElementsList as $item){
+                $item->parentNode->removeChild($item);
+            }
+            
 
         }
     }
