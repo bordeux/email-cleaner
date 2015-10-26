@@ -18,7 +18,7 @@ or
 use EmailCleaner\EmailCleaner;
     $emailCleaner = new EmailCleaner();
     $simpeEmailHTMLContent = "<your html email code>";
-    $emailCleaner->setHTML(file_get_contents($filename));
+    $emailCleaner->setHTML($simpeEmailHTMLContent);
     $resultHTML = $emailCleaner->parse();
     var_dump($resultHTML); //html only with response to email
 ?>
@@ -41,7 +41,7 @@ class YourCustomFilter extends FilterAbstract {
     $emailCleaner->addFilter(new YourCustomFilter());
     
     $simpeEmailHTMLContent = "<your html email code>";
-    $emailCleaner->setHTML(file_get_contents($filename));
+    $emailCleaner->setHTML($simpeEmailHTMLContent);
     $resultHTML = $emailCleaner->parse();
     var_dump($resultHTML); //html only with response to email
 ?>
